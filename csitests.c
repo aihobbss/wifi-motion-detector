@@ -45,12 +45,28 @@ void test04(void) {
         printf("%d\n", diff_score(prev, cur, 4));
 }
 
+/* Test 05 - test moving_avg*/
+void test05(void) {
+	int next = 0;
+	int win[WINDOW] = {0};
+
+	assert(moving_avg(0, win, &next)  == 0);
+	assert(moving_avg(0, win, &next)  == 0);
+	assert(moving_avg(20, win, &next)  == 5);
+	assert(moving_avg(10, win, &next)  == 7);
+	assert(moving_avg(30, win, &next)  == 15);
+	assert(moving_avg(0, win, &next)  == 15);
+	assert(moving_avg(0, win, &next)  == 10);
+	assert(moving_avg(0, win, &next)  == 7);
+	assert(moving_avg(0, win, &next)  == 0);
+}
 int main(void) {
 
 	test01();
 	test02();
 	test03();
 	test04();
+	test05();
 
 	printf("All tests passed woohoo\n");
 

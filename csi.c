@@ -91,7 +91,7 @@ int magnitude(int re, int im) {
 }
 
 /* Get difference of magnitudes between two packets, return score*/
-int diff_score(int *prev, int *cur, int n) {
+int diff_score(int *prev, int *cur, int pairs) {
 	int i = 0;
 	int abs_difference = 0;
 
@@ -100,4 +100,21 @@ int diff_score(int *prev, int *cur, int n) {
 	}
 
 	return abs_difference;
+}
+
+int moving_avg(int score, int *win, int *next) {
+	int i = 0;
+	int sum = 0;
+	int mavg = 0;
+
+	win[*next] = score;
+
+	for (i = 0; i < (WINDOW); i++) {
+		sum += win[i];
+	}
+	mavg = sum/WINDOW;
+
+	*next = (*next + 1) % WINDOW;
+
+	return mavg;
 }
