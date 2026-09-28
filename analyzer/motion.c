@@ -1,5 +1,5 @@
-/* Plots data from csv dataset
- * CSC 2050, Assignment 2
+/* Detects motion from packet input
+ * CSC 2050, Assignment X
  * coded, Fall '26 */
 
 #include "csi.h"
@@ -37,6 +37,11 @@ int main(int argc, char *argv[]) {
 	}
 
 	threshold = strtol(argv[1], &end, 10);
+
+	if (*end != '\0') {
+		printf("usage: ./motion THRESHOLD\n");
+		return 3;
+	}
 
 	while (fgets(line, MAXLINE, stdin) != NULL) {
 		pairs = parse_line(line, &ts, re, im);
@@ -87,4 +92,6 @@ int main(int argc, char *argv[]) {
 
 		printf("\n");
 	}
+
+	return 0;
 }
