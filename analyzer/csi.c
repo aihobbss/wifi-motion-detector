@@ -95,7 +95,7 @@ int diff_score(int *prev, int *cur, int pairs) {
 	int i = 0;
 	int abs_difference = 0;
 
-	for(i = 0; i < n-1; i++) {
+	for(i = 0; i < pairs; i++) {
 		abs_difference += abs(cur[i] - prev[i]);
 	}
 
