@@ -17,7 +17,7 @@
 #define WINDOW 4
 
 /* Smoothed score at or above this prints MOTION; placeholder, tune later */
-#define THRESHOLD 10
+/* #define THRESHOLD 10 */
 
 /* Counts the amount of pairs, if odd number of elements then 1 pair
  * is malformed, will return -1*/
