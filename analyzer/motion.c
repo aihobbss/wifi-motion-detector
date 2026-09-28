@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
 
 	threshold = strtol(argv[1], &end, 10);
 
-	if (*end != '\0') {
+	if (*end != '\0' || threshold < 0) {
 		printf("usage: ./motion THRESHOLD\n");
 		return 3;
 	}

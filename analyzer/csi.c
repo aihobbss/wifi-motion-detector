@@ -63,18 +63,16 @@ int  parse_line(char *line, long *ts, int *re, int *im) {
                         count++;
 			countim++;
 
-			if (*end == '\0') {
+			while (*end == ' ') {
+				end++;
+			}
+
+			if (*end == '\0' || *end == '\n') {
 				return count/2;
 			}
 
-			else {
-                        	while (*end == ' ') {
-					end++;
-				}
-
-				if (*end != ',' || end == line) {
-					return -1;
-				}
+			else if (*end != ',' || end == line) {
+				return -1;
 			}
 
                         line = end + 1;
