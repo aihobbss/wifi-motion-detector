@@ -1,5 +1,5 @@
 /* Detects motion from packet input
- * CSC 2050, Assignment X
+ * CSC 2050 x EE2328, Project Motion
  * coded, Fall '26 */
 
 #include "csi.h"
@@ -48,7 +48,7 @@ int main(int argc, char *argv[]) {
 		/*packet error checks*/
 		if (pairs == -1 ) {
 			printf("./motion: Malformed line\n");
-                        return 2;
+            return 2;
 		}
 
 		if (first == 0) {

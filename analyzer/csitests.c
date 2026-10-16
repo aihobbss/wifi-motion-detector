@@ -21,8 +21,8 @@ void test02(void) {
 	int im[MAXSUB] = {0};
 
 	assert(parse_line("100,1,2,3,4", &ts, re, im) == 2);
-        assert(parse_line("100,1,2,3", &ts, re, im) == -1);
-        assert(parse_line("100,1,2,,4", &ts, re, im) == -1);
+    assert(parse_line("100,1,2,3", &ts, re, im) == -1);
+    assert(parse_line("100,1,2,,4", &ts, re, im) == -1);
 	assert(parse_line("1x0,1,2,,4", &ts, re, im) == -1);
 	assert(parse_line("100,     1, 2 ,3 ,4,5 ,  5", &ts, re, im) == 3);
 
@@ -30,9 +30,7 @@ void test02(void) {
 
 /* Test 03 - tests magnitude*/
 void test03(void) {
-
-        printf("%d\n", magnitude(3, 4));
-        assert(magnitude(3, 0) == 3);
+    assert(magnitude(3, 0) == 3);
 	assert(magnitude(0, 4) == 4);
 
 }
@@ -40,9 +38,8 @@ void test03(void) {
 /* Test 04 - tests diff_scores*/
 void test04(void) {
 	int cur[] = {1,2,3,4};
-        int prev[] = {4,3,2,1};
-
-        printf("%d\n", diff_score(prev, cur, 4));
+    int prev[] = {4,3,2,1};
+	diff_score(prev, cur, 4);
 }
 
 /* Test 05 - test moving_avg*/
