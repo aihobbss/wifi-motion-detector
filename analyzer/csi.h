@@ -14,7 +14,7 @@
 #define MAXSUB 256
 
 /* Moving average window size */
-#define WINDOW 4
+#define WINDOW 86
 
 /* Smoothed score at or above this prints MOTION; placeholder, tune later */
 /* #define THRESHOLD 10 */
